@@ -7,7 +7,7 @@ const generateMarkdown = require('./utils/generateMarkdown');
 // WHEN I enter a description, installation instructions, usage information, 
 // contribution guidelines, and test instructions
 const questions = () => inquirer.prompt([
-    // title
+    // Title
     {
         type:"input",
         name:"title",
@@ -16,50 +16,84 @@ const questions = () => inquirer.prompt([
         validate: (ask) =>
         ask === "" ? "Please enter a project title" : true,
     },
-    // description
+    // Description
     {
         type:"input",
         name:"description",
         question:"Please enter a project description",
-        // if there is no title given
+        // if there is no desscsription given
         validate: (ask) =>
         ask === "" ? "Please enter a project description" : true,
     },
-    // installation
+    // Installation
     {
         type:"input",
         name:"installation-instructions",
         question:"Please enter a project installation instructions",
-        // if there is no title given
+        // if there is no installation inssstruction given
         validate: (ask) =>
         ask === "" ? "Please enter a project installation instructions" : true,
     },
-    // usage
+    // Usage
     {
         type:"input",
         name:"usage-information",
         question:"Please enter a project usage information",
-        // if there is no title given
+        // if there is no usage iniformation given
         validate: (ask) =>
         ask === "" ? "Please enter a project usage information" : true,
     },
-    // contribution
+    // Contribution
     {
         type:"input",
         name:"contribution-guidelines",
         question:"Please enter a project contribution guidelines",
-        // if there is no title given
+        // if there is no contribution given
         validate: (ask) =>
         ask === "" ? "Please enter a project contribution guidelines" : true,
     },
-    // tests
+    // Tests
     {
         type:"input",
         name:"test-instructions",
         question:"Please enter a project test instructions",
-        // if there is no title given
+        // if there is no test instruction  given
         validate: (ask) =>
         ask === "" ? "Please enter a project test instructions" : true,
+    },
+    // Git username 
+    {
+        type:"input",
+        name:"username",
+        question:"Please enter a github username",
+        // if there is no test instruction  given
+        validate: (ask) =>
+        ask === "" ? "Please enter a github username" : true,
+    },
+    // Email address
+    {
+        type:"input",
+        name:"email",
+        question:"Please enter an email",
+        // if there is no test instruction  given
+        validate: (ask) =>
+        ask === "" ? "Please enter an email" : true,
+    },
+    // License
+    {
+        type: "list",
+        name: "license",
+        message: "Please choose the license of this project.",
+        choices: [
+          "GNU AGPLv3",
+          "GNU GPLv3",
+          "GNU LGPLv3",
+          "Mozilla",
+          "MIT",
+          "Apache",
+          "Boost",
+          "None",
+        ],
     },
 ])
 
